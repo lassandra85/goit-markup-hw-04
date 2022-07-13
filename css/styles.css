@@ -16,6 +16,10 @@
     --border-example: #EEEEEE; 
     --indent: 30px;
     --items: 3;
+    --social:#AFB1B8;
+    --bg-order:#C4C4C4;
+    --bg-social-footer: rgba(255, 255, 255, 0.1);
+    --border-clients: 1px;
 }
 
 
@@ -125,8 +129,10 @@ img{
     margin-left: auto;
 }
 
+
 .contact {
-    display: block;
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -136,15 +142,35 @@ img{
     
 }
 
+
+.contact:hover,
+.contact:focus{
+    color: var(--accent-txt-cl);
+}
+
+.contact-icon{
+    margin-right: 10px;
+}
+
+
+.contact-icon {
+    fill: currentColor;
+}
+   
+
 .header-link:hover,
 .header-link:focus,
-.contact:hover,
-.contact:focus,
 .adress:hover,
 .adress:focus,
+.social-media-link:hover,
+.social-media-link:focus,
+.footer-social-link:hover,
+.footer-social-link:focus,
 .footer-link:hover,
-.footer-link:focus{
-    color: var(--accent-txt-cl)
+.footer-link:focus,
+.clients-item:hover,
+.clients-item:focus {
+    color: var(--accent-txt-cl);
 }
 
 
@@ -152,7 +178,14 @@ img{
 /**h1 studio**/
 
 .order{
-    background-color:var(--dark-bg-cl);
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image:linear-gradient(rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)) ,url(../images/Img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color:var(--bg-order) ;
 }
 
 .order-container{
@@ -198,6 +231,8 @@ img{
     background-color: var(--accent-bt);
 }
   
+
+/**section "advantage" **/
 /** sitka **/
 
 .card-set{
@@ -206,17 +241,29 @@ img{
     margin: calc(-1 * (var(--indent) / 2));
 }
 
+
+.advantage-list {
+    --items: 4;
+}
+
+
 .card-set-item{
     flex-basis: calc((100% - var(--indent) * var(--items)) / var(--items) );
     margin: calc(var(--indent) / 2);
 }
 
+.advantage-icon-block{
+    display: flex;
+    justify-content: center;
+    background: var(--list-bg);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
 
-/**section "advantage" **/
 
-
-.advantage-list{
-    --items: 4;
+.advantage-icon{
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 
@@ -267,6 +314,8 @@ img{
 
 .heroes-item{
     background-color: var(--white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .hero {
@@ -283,12 +332,92 @@ img{
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
+    margin-bottom: 16px;
+}
+
+.social-media-list {
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
+.social-media-item:not(:last-child) {
+    margin-right: 10px;  
+}
+
+.social-media-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--social);
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.social-media-icon{
+    fill: currentColor;
+}
+
+
+.clients-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clients-title{
+font-weight: 700;
+font-size: 36px;
+line-height: 1.16;
+text-align: center;
+color: var(--link-cl);
+}
+
+.clients-list{
+    margin-top: 50px;
+    --items: 6;
+}
+
+.clients-item{
+    display: flex;
+    color: var(--social);
+    border: var(--border-clients) solid currentColor;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+.clients-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(16px - var(--border-clients)) calc(32px - var(--border-clients));
+    color: currentColor;
+}
+
+.clients-icon{
+    fill: currentColor;
+}
+
+
 /*footer*/
 .footer{
-    background-color: var(--dark-bg-cl);
+    display: flex;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--dark-bg-cl);   
+}
+
+.footer-container{
+    display: flex;
+}
+
+
+.contact-footer{
+    display: inline-flex;
+    flex-direction: column;
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -297,6 +426,7 @@ img{
 .footer-accent {
     color: var(--white);
 }
+
 
 .footer-list{
     display: flex;
@@ -309,19 +439,74 @@ img{
 }
 
 .footer-link{
-font-weight: 400;
-font-size: 14px;
-line-height: 1.71;
-letter-spacing: 0.03em;
-color:var(--foot);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color:var(--foot);
 
 }
 
 .adress{
     color:var(--white);
-    margin-top: 20px;
-    margin-bottom: 9px;
 }
+
+
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    padding-top: 72px;
+    padding-bottom: 100px;
+    padding-left: 70px;
+
+}
+
+.footer-text{
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+
+.footer-social-list{
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.footer-social-item{
+    display: flex;
+}
+
+
+.footer-social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--white);
+    background-color: var(--bg-social-footer);
+    border-radius: 50%;
+}
+
+
+.footer-social-link:hover,
+.footer-social-link:focus{
+    color: var(--white);
+    background-color: var(--accent-txt-cl);
+}
+
+.footer-social-icon {
+    fill: currentColor;
+}
+
+
+
 
 /*Portfolio*/
 
@@ -354,6 +539,7 @@ color:var(--foot);
 .btn-list:focus{
     color: var(--white);
     background-color: var(--accent-txt-cl);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -365,17 +551,18 @@ color:var(--foot);
 
 /**section "example"**/
 
-.example-list{
-    margin-right: 0;
-    margin-left: 0;
-}
-
 .example-item{
     display: flex;
     flex-direction: column;
     background-color: var(--white);
+
 }
 
+
+.example-item:hover{
+    border: 1px solid var(--border-example);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 .example{
     border: 1px solid var(--border-example);
